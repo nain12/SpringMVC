@@ -18,5 +18,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="C:/Users/nainy.anil.sewaney.DIR/Documents/Work_In_Progress/Highly_Confidential/spring/spring-framework-4.0.4.RELEASE-dist/spring-framework-4.0.4.RELEASE/libs/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/nainy.anil.sewaney.DIR/Documents/Work_In_Progress/Highly_Confidential/spring/spring-framework-4.0.4.RELEASE-dist/spring-framework-4.0.4.RELEASE/libs/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nainy.anil.sewaney.DIR/Documents/Work_In_Progress/Highly_Confidential/spring/spring-framework-4.0.4.RELEASE-dist/spring-framework-4.0.4.RELEASE/libs/apache-commons-lang.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nainy.anil.sewaney.DIR/Documents/Work_In_Progress/Highly_Confidential/spring/spring-framework-4.0.4.RELEASE-dist/spring-framework-4.0.4.RELEASE/libs/mockito-all-1.10.19.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
