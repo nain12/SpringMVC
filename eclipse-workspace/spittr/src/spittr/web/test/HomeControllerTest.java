@@ -1,11 +1,16 @@
-package spittr.web;
+package spittr.web.test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.servlet.view.InternalResourceView;
+
 import spittle.Spittle;
-import static org.mockito.Mockito.*;
 import spittr.data.SpittleRepository;
+import spittr.web.HomeController;
+import spittr.web.SpittleController;
+
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import java.util.ArrayList;
@@ -24,15 +29,15 @@ public class HomeControllerTest {
 	}
 
 	@Test
-	public void shouldShowRecentSpittles() {
+	public void shouldShowRecentSpittles() throws Exception {
 		List<Spittle> expectedSpittles = createSpittleList(20);
 		SpittleRepository mockRepository = mock(SpittleRepository.class);
-		when(mockRepository.findSpittles(Long.MAX_VALUE, 20)).thenReturn(expectedSpittles);
+		when(mockRepository.findSpittles(238900, 50)).thenReturn(expectedSpittles);
 
 		SpittleController controller = new SpittleController(mockRepository);
-		MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).setSingleView("/WEB-INF/views/spittles.jsp")
+		MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp"))
 				.build();
-		mockMvc.perform(get("/")).andExpect(view().name("spittles")).andExpect(model().attributeExists("spittleList"))
+		mockMvc.perform(get("/spittles?max=238900&count=50")).andExpect(view().name("spittles")).andExpect(model().attributeExists("spittleList"))
 				.andExpect(model().attribute("spittleList", expectedSpittles.toArray()));
 
 	}
